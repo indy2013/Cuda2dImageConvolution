@@ -97,6 +97,8 @@ for (int i = 1; i <= 10; i++)
     dim3 block(BLOCK_SIZE, BLOCK_SIZE);
     dim3 grid((input_width + BLOCK_SIZE - 1) / BLOCK_SIZE, (input_height + BLOCK_SIZE - 1) / BLOCK_SIZE);
     conv2D<<<grid, block>>>(d_output, d_input, d_kernel, input_width, input_height);
+     cudaDeviceSynchronize();
+
 
     // Copy data from device to host
     cudaMemcpy(h_output, d_output, output_size * sizeof(float), cudaMemcpyDeviceToHost);
