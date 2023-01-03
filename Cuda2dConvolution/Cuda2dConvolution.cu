@@ -55,9 +55,9 @@ __global__ void minPoolFilter(float* output, float* input, int input_width, int 
         float min_val = input[y * input_width + x];
 
         // Iterate through the pooling window and find the minimum value
-        for (int py = y; py < y + pool_size; ++py)
+        for (int py = y; py < y + pool_size; py+2)
         {
-            for (int px = x; px < x + pool_size; ++px)
+            for (int px = x; px < x + pool_size; px+2)
             {
                 // Check if the pixel is within the bounds of the input image
                 if (px >= 0 && px < input_width && py >= 0 && py < input_height)
@@ -85,9 +85,9 @@ __global__ void maxPoolFilter(float* output, float* input, int input_width, int 
           float max_val = input[y * input_width + x];
 
         // Iterate through the pooling window and find the minimum value
-        for (int py = y; py < y + pool_size; ++py)
+        for (int py = y; py < y + pool_size; py+2)
         {
-            for (int px = x; px < x + pool_size; ++px)
+            for (int px = x; px < x + pool_size; px+2)
             {
                 // Check if the pixel is within the bounds of the input image
                 if (px >= 0 && px < input_width && py >= 0 && py < input_height)
