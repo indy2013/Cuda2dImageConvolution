@@ -6,3 +6,7 @@ Maxpooling is a simple yet powerful function that replaces the pixel values in a
 
 # Minpooling
 Minpooling is similar to maxpooling, but instead of replacing the pixel values with the maximum value, we replace them with the minimum value. The goal of minpooling is to highlight the smallest features in an image. The implementation of minpooling in CUDA is similar to maxpooling, and we have also included it in this project.
+
+# Convolution
+Convolution is a complex image processing function widely used in computer vision. It involves multiplying a small window of pixels with a filter matrix and summing the results. The convolution function is useful for image filtering, edge detection, and feature extraction. We have implemented the convolution operation in CUDA to take advantage of the parallelism offered by modern GPUs.
+
